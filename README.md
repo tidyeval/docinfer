@@ -10,6 +10,15 @@ A Python package for extracting and inferring metadata from PDF documents using 
 - Flexible configuration and output formatting
 - Structured metadata models using Pydantic
 
+## Requirements
+
+- Python 3.12 or higher
+- **Ollama** - Required for AI-powered analysis
+  - [Install Ollama](https://ollama.ai)
+  - Pull a model: `ollama pull gemma2` (or any other available model)
+  - Ollama service must be running: `ollama serve`
+- See `pyproject.toml` for full Python dependency list
+
 ## Installation
 
 ### From GitHub Repository
@@ -28,11 +37,6 @@ cd docinfer
 pip install -e .
 ```
 
-## Requirements
-
-- Python 3.12 or higher
-- See `pyproject.toml` for full dependency list
-
 ## Quick Start
 
 ### Using uvx (Recommended)
@@ -42,8 +46,6 @@ Run directly from the repository without installation using [uvx](https://docs.a
 ```bash
 uvx --from git+https://github.com/tidyeval/docinfer.git docinfer <path-to-pdf>
 ```
-
-> **Note:** Once the package is published to PyPI, you can simply run `uvx docinfer <path-to-pdf>`
 
 ### CLI Usage
 
@@ -104,6 +106,11 @@ docinfer/
    pip install -e ".[dev]"
    ```
 
+4. Start Ollama service:
+   ```bash
+   ollama serve
+   ```
+
 ### Running Tests
 
 ```bash
@@ -116,39 +123,6 @@ The project uses:
 - **black** for code formatting
 - **ruff** for linting
 - **pytest** for testing
-
-## Publishing to PyPI
-
-### Prerequisites
-
-Ensure you have a PyPI account and have set up `~/.pyrc` with your credentials.
-
-### Build and Upload
-
-1. Install build dependencies:
-   ```bash
-   pip install build twine
-   ```
-
-2. Build the package:
-   ```bash
-   python -m build
-   ```
-
-3. Upload to PyPI:
-   ```bash
-   twine upload dist/*
-   ```
-
-After publishing, the package can be installed directly:
-```bash
-pip install docinfer
-```
-
-And used via uvx without the git URL:
-```bash
-uvx docinfer <path-to-pdf>
-```
 
 ## Contributing
 
