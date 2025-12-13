@@ -40,7 +40,7 @@ def main(
         help="Skip AI analysis, show embedded metadata only",
     ),
     model: str = typer.Option(
-        "gemma2",
+        "gemma3:4b",
         "--model",
         help="Ollama model to use for AI analysis",
     ),
