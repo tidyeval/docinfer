@@ -40,11 +40,13 @@ pip install -e .
 
 ### Using uvx (Recommended)
 
-Run directly from the repository without installation using [uvx](https://docs.astral.sh/uv/guides/tools/):
+Run directly without installation using [uvx](https://docs.astral.sh/uv/guides/tools/):
 
 ```bash
 uvx --from git+https://github.com/tidyeval/docinfer.git docinfer <path-to-pdf>
 ```
+
+> **Note:** Once published to PyPI, you'll be able to run `uvx docinfer <path-to-pdf>` directly.
 
 ### CLI Usage
 
