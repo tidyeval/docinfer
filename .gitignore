@@ -7,6 +7,7 @@ __pycache__/
 .ruff_cache/
 dist/
 build/
-*.egg-info/.claude/
+*.egg-info/
+.claude/
 specs/
-.spectify/
+.specify/

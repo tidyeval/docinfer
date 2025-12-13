@@ -15,6 +15,9 @@ dependencies = [
     "pytest",
 ]
 
+[project.scripts]
+docinfer = "src.cli:app"
+
 [project.optional-dependencies]
 dev = [
     "pytest-mock>=3.14.0",
