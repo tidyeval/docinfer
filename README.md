@@ -117,6 +117,39 @@ The project uses:
 - **ruff** for linting
 - **pytest** for testing
 
+## Publishing to PyPI
+
+### Prerequisites
+
+Ensure you have a PyPI account and have set up `~/.pyrc` with your credentials.
+
+### Build and Upload
+
+1. Install build dependencies:
+   ```bash
+   pip install build twine
+   ```
+
+2. Build the package:
+   ```bash
+   python -m build
+   ```
+
+3. Upload to PyPI:
+   ```bash
+   twine upload dist/*
+   ```
+
+After publishing, the package can be installed directly:
+```bash
+pip install docinfer
+```
+
+And used via uvx without the git URL:
+```bash
+uvx docinfer <path-to-pdf>
+```
+
 ## Contributing
 
 Contributions are welcome! Please ensure:
