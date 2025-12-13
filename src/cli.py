@@ -9,7 +9,7 @@ from rich.console import Console
 from src.models.config import ExtractionConfig, OutputConfig
 
 app = typer.Typer(
-    name="pdf-meta",
+    name="docinfer",
     help="Extract metadata from PDF files using AI.",
     add_completion=False,
 )
