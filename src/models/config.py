@@ -8,10 +8,14 @@ from pydantic import BaseModel, Field
 class ExtractionConfig(BaseModel):
     """Configuration for metadata extraction."""
 
-    max_pages: int = Field(default=10, description="Maximum pages to analyze", ge=1, le=100)
+    max_pages: int = Field(
+        default=10, description="Maximum pages to analyze", ge=1, le=100
+    )
     model_name: str = Field(default="gemma3:4b", description="Ollama model to use")
     skip_ai: bool = Field(default=False, description="Skip AI analysis")
-    temperature: float = Field(default=0.0, description="LLM temperature", ge=0.0, le=2.0)
+    temperature: float = Field(
+        default=0.0, description="LLM temperature", ge=0.0, le=2.0
+    )
     timeout_seconds: int = Field(default=120, description="AI analysis timeout", ge=10)
 
 
