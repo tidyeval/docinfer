@@ -8,12 +8,14 @@ from rich.console import Console
 
 from docinfer.models.config import ExtractionConfig, OutputConfig
 
+console = Console()
+
+# Create the app for direct invocation
 app = typer.Typer(
     name="docinfer",
     help="Extract metadata from PDF files using AI.",
     add_completion=False,
 )
-console = Console()
 
 
 @app.command()
@@ -54,11 +56,11 @@ def main(
     """Extract metadata from PDF files.
 
     Examples:
-        pdf-meta document.pdf
-        pdf-meta ./papers/
-        pdf-meta document.pdf --json
-        pdf-meta document.pdf --no-ai
-        pdf-meta document.pdf --export metadata.json
+        docinfer document.pdf
+        docinfer ./papers/
+        docinfer document.pdf --json
+        docinfer document.pdf --no-ai
+        docinfer document.pdf --export metadata.json
     """
     # Build configuration
     extraction_config = ExtractionConfig(
@@ -227,4 +229,5 @@ def _process_directory(
 
 
 if __name__ == "__main__":
+    app()
     app()
