@@ -35,9 +35,17 @@ pip install -e .
 
 ## Quick Start
 
+### Using uvx (Recommended)
+
+Run without installation using [uvx](https://docs.astral.sh/uv/guides/tools/):
+
+```bash
+uvx docinfer <path-to-pdf>
+```
+
 ### CLI Usage
 
-Extract metadata from a PDF file:
+If you've installed the package, run directly:
 
 ```bash
 docinfer <path-to-pdf>
