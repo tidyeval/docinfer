@@ -1,6 +1,0 @@
-__init__
-cli
-hello_world
-models
-prompts
-services

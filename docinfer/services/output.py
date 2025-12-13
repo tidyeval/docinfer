@@ -8,7 +8,7 @@ from rich.panel import Panel
 from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, TaskProgressColumn
 from rich.tree import Tree
 
-from src.models.metadata import BatchResult, MetadataResult
+from docinfer.models.metadata import BatchResult, MetadataResult
 
 
 def display_metadata(result: MetadataResult, console: Console) -> None:

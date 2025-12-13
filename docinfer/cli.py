@@ -6,7 +6,7 @@ from typing import Optional
 import typer
 from rich.console import Console
 
-from src.models.config import ExtractionConfig, OutputConfig
+from docinfer.models.config import ExtractionConfig, OutputConfig
 
 app = typer.Typer(
     name="docinfer",
@@ -72,7 +72,7 @@ def main(
     )
 
     # Import here to avoid circular imports and allow lazy loading
-    from src.services.output import display_error
+    from docinfer.services.output import display_error
 
     if path.is_file():
         _process_single_file(path, extraction_config, output_config)
@@ -89,13 +89,13 @@ def _process_single_file(
     output_config: OutputConfig,
 ) -> None:
     """Process a single PDF file."""
-    from src.services.output import (
+    from docinfer.services.output import (
         display_error,
         display_metadata,
         display_warning,
         output_json,
     )
-    from src.services.pdf_extractor import extract_embedded_metadata, extract_text
+    from docinfer.services.pdf_extractor import extract_embedded_metadata, extract_text
 
     # Validate file extension
     if file_path.suffix.lower() != ".pdf":
@@ -129,7 +129,7 @@ def _process_single_file(
             warnings.append(f"Text extraction failed: {e}")
 
     # Build result
-    from src.models.metadata import MetadataResult
+    from docinfer.models.metadata import MetadataResult
 
     result = MetadataResult(
         file_path=file_path,
@@ -143,7 +143,7 @@ def _process_single_file(
 
     # AI analysis if enabled and text available
     if not extraction_config.skip_ai and text_content.strip():
-        from src.services.ai_analyzer import (
+        from docinfer.services.ai_analyzer import (
             analyze_content,
             is_ollama_available,
             merge_ai_into_embedded,
@@ -151,7 +151,7 @@ def _process_single_file(
 
         if is_ollama_available(extraction_config.model_name):
             if not output_config.quiet:
-                from src.services.output import create_spinner
+                from docinfer.services.output import create_spinner
 
                 with create_spinner("Analyzing with AI..."):
                     ai_metadata = analyze_content(text_content, extraction_config)
@@ -198,8 +198,8 @@ def _process_directory(
     output_config: OutputConfig,
 ) -> None:
     """Process all PDFs in a directory."""
-    from src.services.output import display_batch_result, display_error, output_json
-    from src.services.pdf_extractor import find_pdfs, process_directory
+    from docinfer.services.output import display_batch_result, display_error, output_json
+    from docinfer.services.pdf_extractor import find_pdfs, process_directory
 
     pdf_files = find_pdfs(directory)
 

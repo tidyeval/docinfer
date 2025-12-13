@@ -31,7 +31,7 @@ Repository = "https://github.com/tidyeval/docinfer"
 BugTracker = "https://github.com/tidyeval/docinfer/issues"
 
 [project.scripts]
-docinfer = "src.cli:main"
+docinfer = "docinfer.cli:main"
 
 [project.optional-dependencies]
 dev = [
@@ -43,6 +43,6 @@ dev = [
 ]
 
 [tool.pytest.ini_options]
-pythonpath = "src"
+pythonpath = "docinfer"
 
 

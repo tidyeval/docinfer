@@ -1,12 +1,12 @@
 """Pydantic models for metadata and configuration."""
 
-from src.models.metadata import (
+from docinfer.models.metadata import (
     EmbeddedMetadata,
     AIMetadata,
     MetadataResult,
     BatchResult,
 )
-from src.models.config import ExtractionConfig, OutputConfig
+from docinfer.models.config import ExtractionConfig, OutputConfig
 
 __all__ = [
     "EmbeddedMetadata",

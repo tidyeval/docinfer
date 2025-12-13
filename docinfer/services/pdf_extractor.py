@@ -5,7 +5,7 @@ from pathlib import Path
 from pypdf import PdfReader
 from pypdf.errors import PdfReadError
 
-from src.models.metadata import EmbeddedMetadata
+from docinfer.models.metadata import EmbeddedMetadata
 
 
 def extract_embedded_metadata(
@@ -155,14 +155,14 @@ def process_directory(
     Returns:
         BatchResult with all processing results
     """
-    from src.models.config import ExtractionConfig, OutputConfig
-    from src.models.metadata import BatchResult, MetadataResult
-    from src.services.ai_analyzer import (
+    from docinfer.models.config import ExtractionConfig, OutputConfig
+    from docinfer.models.metadata import BatchResult, MetadataResult
+    from docinfer.services.ai_analyzer import (
         analyze_content,
         is_ollama_available,
         merge_ai_into_embedded,
     )
-    from src.services.output import create_batch_progress
+    from docinfer.services.output import create_batch_progress
 
     results: list[MetadataResult] = []
     errors: list[dict] = []

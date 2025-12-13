@@ -3,9 +3,9 @@
 import subprocess
 from typing import Optional
 
-from src.models.config import ExtractionConfig
-from src.models.metadata import AIMetadata, EmbeddedMetadata
-from src.prompts.metadata import SYSTEM_PROMPT, USER_PROMPT_TEMPLATE
+from docinfer.models.config import ExtractionConfig
+from docinfer.models.metadata import AIMetadata, EmbeddedMetadata
+from docinfer.prompts.metadata import SYSTEM_PROMPT, USER_PROMPT_TEMPLATE
 
 
 def is_ollama_running() -> bool:
