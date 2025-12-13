@@ -33,7 +33,7 @@ Repository = "https://github.com/tidyeval/docinfer"
 BugTracker = "https://github.com/tidyeval/docinfer/issues"
 
 [project.scripts]
-docinfer = "docinfer.cli:main"
+docinfer = "docinfer.cli:app"
 
 [project.optional-dependencies]
 dev = [
