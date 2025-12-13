@@ -56,6 +56,15 @@ If you've installed the package locally, run directly:
 docinfer <path-to-pdf>
 ```
 
+#### Options
+
+- `--model MODEL` - Specify the Ollama model (default: `gemma2`)
+  - Example: `docinfer document.pdf --model gemma3:4b`
+- `--json` - Output as JSON instead of formatted text
+- `--no-ai` - Skip AI analysis and show embedded metadata only
+- `--export FILE` - Export results to JSON file
+- `--quiet` - Suppress progress output
+
 ### Python API
 
 ```python
