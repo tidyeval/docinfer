@@ -15,8 +15,7 @@ A Python package for extracting and inferring metadata from PDF documents using 
 - Python 3.12 or higher
 - **Ollama** - Required for AI-powered analysis
   - [Install Ollama](https://ollama.ai)
-  - Pull a model: `ollama pull gemma2` (or any other available model)
-  - Ollama service must be running: `ollama serve`
+  - Pull a model: `ollama pull gemma3:4b`
 - See `pyproject.toml` for full Python dependency list
 
 ## Installation
@@ -104,11 +103,6 @@ docinfer/
 3. Install in development mode:
    ```bash
    pip install -e ".[dev]"
-   ```
-
-4. Start Ollama service:
-   ```bash
-   ollama serve
    ```
 
 ### Running Tests
