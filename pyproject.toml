@@ -16,12 +16,6 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.12",
 ]
-
-[project.urls]
-Homepage = "https://github.com/tidyeval/docinfer"
-Repository = "https://github.com/tidyeval/docinfer"
-BugTracker = "https://github.com/tidyeval/docinfer/issues"
-
 dependencies = [
     "numpy>=1.24.0",
     "pandas>=2.0.0",
@@ -30,6 +24,11 @@ dependencies = [
     "typer>=0.12.0",
     "rich>=13.0.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/tidyeval/docinfer"
+Repository = "https://github.com/tidyeval/docinfer"
+BugTracker = "https://github.com/tidyeval/docinfer/issues"
 
 [project.scripts]
 docinfer = "src.cli:main"
