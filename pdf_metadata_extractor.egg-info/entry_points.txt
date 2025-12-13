@@ -1,0 +1,2 @@
+[console_scripts]
+pdf-meta = src.cli:app
