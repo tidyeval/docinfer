@@ -1,9 +1,0 @@
-pypdf>=4.0
-langchain-ollama>=0.2
-pydantic>=2.0
-rich>=13.0
-typer>=0.12
-
-[dev]
-pytest>=8.0
-pytest-cov>=4.0

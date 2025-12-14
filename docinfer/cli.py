@@ -200,7 +200,11 @@ def _process_directory(
     output_config: OutputConfig,
 ) -> None:
     """Process all PDFs in a directory."""
-    from docinfer.services.output import display_batch_result, display_error, output_json
+    from docinfer.services.output import (
+        display_batch_result,
+        display_error,
+        output_json,
+    )
     from docinfer.services.pdf_extractor import find_pdfs, process_directory
 
     pdf_files = find_pdfs(directory)
